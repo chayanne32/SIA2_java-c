@@ -1,0 +1,8 @@
+javac -h . readDB.java
+
+gcc -I"C:\Program Files\Java\jdk1.8.0_131\include" -I"C:\Program Files\Java\jdk1.8.0_131\include\win32" -I"C:\Users\wabzs\Desktop\Projects and apps\CS and IT\IT 3203\SIA2_java-c\sia2_readDB\src\sia2_readdb" -m64 -shared -o sia2_native.dll sia2_readDB.c
+
+java -D.java.library.path=C:\Users\wabzs\Desktop\Projects and apps\CS and IT\IT 3203\SIA2_java-c\sia2_readDB\src\sia2_readdb sia2_readdb.test_class
+
+java -D.java.library.path=. sia2_readdb.test_class
+
