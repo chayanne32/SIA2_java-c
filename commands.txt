@@ -1,5 +1,9 @@
+cd C:\Users\wabzs\Desktop\Projects and apps\CS and IT\IT 3203\SIA2_java-c\sia2_readDB\src\sia2_readdb
+
 javac -classpath "C:\Users\wabzs\Desktop\Projects and apps\CS and IT\IT 3203\SIA2_java-c\sia2_readDB;C:\Users\wabzs\Desktop\Projects and apps\CS and IT\IT 3203\SIA2_java-c\sia2_readDB\lib\mysql-connector-java-5.1.6-bin.jar";. -h . readDB.java
 
 gcc -I"C:\Program Files\Java\jdk1.8.0_131\include" -I"C:\Program Files\Java\jdk1.8.0_131\include\win32" -I"C:\Users\wabzs\Desktop\Projects and apps\CS and IT\IT 3203\SIA2_java-c\sia2_readDB\src\sia2_readdb" -m64 -shared -o sia2_native.dll sia2_readDB.c
+
+cd C:\Users\wabzs\Desktop\Projects and apps\CS and IT\IT 3203\SIA2_java-c\sia2_readDB\src
 
 java -classpath "C:\Users\wabzs\Desktop\Projects and apps\CS and IT\IT 3203\SIA2_java-c\sia2_readDB;C:\Users\wabzs\Desktop\Projects and apps\CS and IT\IT 3203\SIA2_java-c\sia2_readDB\lib\mysql-connector-java-5.1.6-bin.jar";. -D.java.library.path=. sia2_readdb.readDB
