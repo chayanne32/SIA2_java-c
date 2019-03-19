@@ -19,14 +19,17 @@ public class readDB {
     
     public ResultSet rs;
     //public [] array;
-    private native void cgetData(String[] x);
-    private native void stringarray(String[] y);
+    private native void cgetData(int depth);
+    //private native void stringarray(String[] y);
     
     public static void main(String args[]) {
         readDB rdb = new readDB();
-        rdb.getData();
+        //rdb.getData();
+        //rdb.displayData();
+        rdb.cgetData(0);
+        //rdb.getData();
         //String [] s = rdb.arrangeData();
-        rdb.cgetData(rdb.arrangeData(rdb.getRs()));
+        //rdb.cgetData(rdb.arrangeData(rdb.getRs()));
     }   
     public ResultSet getRs(){
         return this.rs;
@@ -36,15 +39,27 @@ public class readDB {
     
     public void getData(){
         try{
+            System.out.println("Sup");
             Class.forName("com.mysql.jdbc.Driver");
-
+            System.out.println("Driver loaded");  
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sia2","root","");                      
             System.out.println("DB connected");       
             Statement st = conn.createStatement();
             String sql = ("SELECT * FROM students");
-            rs = st.executeQuery(sql);
+            ResultSet rst = st.executeQuery(sql);
+            ResultSetMetaData rsmd = rst.getMetaData();
+            int columnsNumber = rsmd.getColumnCount();
+            while (rst.next()) {
+                for (int i = 1; i <= columnsNumber; i++) {
+                    if (i > 1) System.out.print(",  ");
+                    String columnValue = rst.getString(i);
+                    System.out.print(columnValue);
+                }
+                System.out.println("");
+            }
         }catch(Exception e){
-            System.out.println(e.getMessage());       
+            System.out.println(e.getMessage());  
+            e.printStackTrace();
         }      
     }
     

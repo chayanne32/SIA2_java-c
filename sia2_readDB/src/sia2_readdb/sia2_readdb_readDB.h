@@ -10,18 +10,10 @@ extern "C" {
 /*
  * Class:     sia2_readdb_readDB
  * Method:    cgetData
- * Signature: ([Ljava/lang/String;)V
+ * Signature: (I)V
  */
 JNIEXPORT void JNICALL Java_sia2_1readdb_readDB_cgetData
-  (JNIEnv *, jobject, jobjectArray);
-
-/*
- * Class:     sia2_readdb_readDB
- * Method:    stringarray
- * Signature: ([Ljava/lang/String;)V
- */
-JNIEXPORT void JNICALL Java_sia2_1readdb_readDB_stringarray
-  (JNIEnv *, jobject, jobjectArray);
+  (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
 }

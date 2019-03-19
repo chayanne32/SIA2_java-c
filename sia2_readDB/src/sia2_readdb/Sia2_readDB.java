@@ -19,7 +19,7 @@ public class Sia2_readDB {
         readDB x = new readDB();
         x.getData();
         //x.displayData();
-        x.arrangeData();
+        //x.arrangeData();
     }
     
 }
